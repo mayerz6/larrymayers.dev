@@ -1,0 +1,23 @@
+{
+  "name": "larrymayers.dev",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "deploy": "gh-pages -d public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mayerz6/larrymayers-dev.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mayerz6/larrymayers-dev/issues"
+  },
+  "homepage": "https://mayerz6.github.io/larrymayers-dev",
+  "dependencies": {
+    "gh-pages": "^2.1.1"
+  }
+}
