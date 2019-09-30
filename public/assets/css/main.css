@@ -12,3 +12,7 @@ a {
     a:hover, a:focus {
       text-decoration: none;
       outline: none; }
+
+
+div.home_left_img { outline: 0px solid #000; }
+div.home_left_img > img { width: 100%; }
