@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
         <title>My Professional Portfolio</title>
 
         <!-- Bootstrap CSS -->
@@ -12,15 +14,15 @@
         <link rel="stylesheet" href="assets/css/main.css">
 
     </head>
+
+
     <body>
 
+        <!-- Header Region -->
             <header></header>
+            <!-- End of Header Region -->
 
-  <!-- Header Region -->
-<div class="container">
-  
-
-    <!-- Header Region -->
+            <div class="container">
 
         <!--================Home Banner Area =================-->
         <section class="home_banner_area">
@@ -32,6 +34,7 @@
                                 <img src="assets/img/banner/mayers.png" alt="">
                             </div>
                         </div>
+
                         <div class="col-lg-6">
                             <div class="banner_content">
                               <br>
@@ -53,9 +56,13 @@
                 
 
                 <hr>
-   <footer></footer>
-</div>
-    <script >
+
+                <!-- Footer Region -->
+                <footer></footer>
+                <!-- End of Footer Region -->
+    </div>
+
+    <script>
 
     // Unique approach to inserting content within the site dynamically.
     fetch("./assets/regions/nav.html").then(function(response){
@@ -66,7 +73,8 @@
                 }).catch(function(err){
                     console.log('Fetch error occurred', err);
                 });         
-       
+
+    // Unique approach to inserting content within the site dynamically.   
     fetch("./assets/regions/footer.html").then(function(response){
             return response.text();
         }).then(function(string){
