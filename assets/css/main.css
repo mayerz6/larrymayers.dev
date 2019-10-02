@@ -13,7 +13,7 @@ a {
       text-decoration: none;
       outline: none; }
 
-
+div.footer-area { margin: 2em 0em; padding-top: 2em; border-top: 1px solid #777777; }
 div.home_left_img { outline: 0px solid #000; }
 div.home_left_img > img { width: 100%; }
 a.navbar-brand img { outline: 1px solid #777; width: 20%; }
