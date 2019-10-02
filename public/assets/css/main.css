@@ -17,3 +17,12 @@ div.footer-area { margin: 2em 0em; padding-top: 2em; border-top: 1px solid #7777
 div.home_left_img { outline: 0px solid #000; }
 div.home_left_img > img { width: 100%; }
 a.navbar-brand img { outline: 1px solid #777; width: 20%; }
+div.row > div.col-lg-4 { outline: 0px solid #ccc; padding: 0em 1.8em; }
+
+
+span.copyright { margin-top: 2em; display: block; }
+@media (max-width:480px)  
+{ 
+    /* smartphones, Android phones, landscape iPhone */ 
+    div.row > div.col-lg-4 { outline: 0px solid #ccc; margin: 1.2em 0em; }
+}
