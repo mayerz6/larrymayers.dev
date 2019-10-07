@@ -6,7 +6,6 @@ body {
     color: #777777;
 }
 
-.bg-info, .btn-info { background-color: #0b3c71 !important; }
 a {
     text-decoration: none;
     transition: all 0.3s ease-in-out; }
@@ -14,142 +13,17 @@ a {
       text-decoration: none;
       outline: none; }
 header { margin-bottom: 2em; }
-div.footer-area { margin: 2em 0em; padding-top: 2em; border-top: 1px solid #ccc; }
+div.footer-area { margin: 2em 0em; padding-top: 2em; border-top: 1px solid #777777; }
 div.home_left_img { outline: 0px solid #000; }
 div.home_left_img > img { width: 100%; }
-a.navbar-brand img { outline: 1px solid #ccc; width: 20%; }
+a.navbar-brand img { outline: 1px solid #777; width: 20%; }
 div.row > div.col-lg-4 { outline: 0px solid #ccc; padding: 0em 1.8em; }
 ul.list { margin: 0em; padding: 0em; }
 aside.social_widget { outline: 0px solid #ccc; }
 aside.social_widget > ul.list > li { margin: 0em 0.8em; display: inline-block; outline: 0px solid #ccc; }
 span.copyright { margin-top: 2em; display: block; }
-
-
 @media (max-width:480px)  
 { 
     /* smartphones, Android phones, landscape iPhone */ 
     div.row > div.col-lg-4 { outline: 0px solid #ccc; margin: 1.2em 0em; }
 }
-
-
-
-   /* resume stuff */
-   
-   .bs-callout {
-    -moz-border-bottom-colors: none;
-    -moz-border-left-colors: none;
-    -moz-border-right-colors: none;
-    -moz-border-top-colors: none;
-    border-color: #eee;
-    border-image: none;
-    border-radius: 3px;
-    border-style: solid;
-    border-width: 1px 1px 1px 5px;
-    margin-bottom: 5px;
-    padding: 20px;
-}
-.bs-callout:last-child {
-    margin-bottom: 0px;
-}
-.bs-callout h4 {
-    margin-bottom: 10px;
-    margin-top: 0;
-}
-
-.bs-callout-danger {
-    border-left-color: #dedede;
-}
-
-.bs-callout-danger h4{
-    color: #0d47a1;
-}
-
-.resume .list-group-item:first-child, .resume .list-group-item:last-child{
-  border-radius:0;
-}
-
-/*makes an anchor inactive(not clickable)*/
-.inactive-link {
-   pointer-events: none;
-   cursor: default;
-}
-
-.resume-heading .social-btns{
-  margin-top:15px;
-}
-.resume-heading .social-btns i.fa{
-  margin-left:-5px;
-}
-
-
-
-@media (max-width: 992px) {
-  .resume-heading .social-btn-holder{
-    padding:5px;
-  }
-}
-
-div.progress { margin-top: 4px; margin-bottom: 4px; }
-
-/* skill meter in resume. copy pasted from http://bootsnipp.com/snippets/featured/progress-bar-meter */
-
-.progress-bar {
-    text-align: left;
-    white-space: nowrap;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    cursor: pointer;
-}
-
-.progress-bar > .progress-type {
-    padding-left: 10px;
-}
-
-.progress-meter {
-    min-height: 15px;
-    border-bottom: 2px solid rgb(160, 160, 160);
-  margin-bottom: 15px;
-}
-
-.progress-meter > .meter {
-    position: relative;
-    float: left;
-    min-height: 15px;
-    border-width: 0px;
-    border-style: solid;
-    border-color: rgb(160, 160, 160);
-}
-
-.progress-meter > .meter-left {
-    border-left-width: 2px;
-}
-
-.progress-meter > .meter-right {
-    float: right;
-    border-right-width: 2px;
-}
-
-.progress-meter > .meter-right:last-child {
-    border-left-width: 2px;
-}
-
-.progress-meter > .meter > .meter-text {
-    position: absolute;
-    display: inline-block;
-    bottom: -20px;
-    width: 100%;
-    font-weight: 700;
-    font-size: 0.85em;
-    color: rgb(160, 160, 160);
-    text-align: left;
-}
-
-.progress-meter > .meter.meter-right > .meter-text {
-    text-align: right;
-}
-
-
-    
-                        
-/**** resume ****/
