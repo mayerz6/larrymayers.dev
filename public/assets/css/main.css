@@ -6,12 +6,14 @@ body {
     color: #777777;
 }
 
+.quote { font-weight: 400; font-size: 24pt; text-align: left; margin-bottom: 0.48em;  }
 a {
     text-decoration: none;
     transition: all 0.3s ease-in-out; }
     a:hover, a:focus {
       text-decoration: none;
       outline: none; }
+
 header { margin-bottom: 2em; }
 div.footer-area { margin: 2em 0em; padding-top: 2em; border-top: 1px solid #777777; }
 div.home_left_img { outline: 0px solid #000; }
@@ -23,7 +25,10 @@ aside.social_widget { outline: 0px solid #ccc; }
 aside.social_widget > ul.list > li { margin: 0em 0.8em; display: inline-block; outline: 0px solid #ccc; }
 span.copyright { margin-top: 2em; display: block; }
 div#content { margin-left: 3.2em; }
-img.img-logo { width: 78%; outline: 0px solid #ccc; }
+.space { margin-top: 1.2em; }
+img.img-logo { width: 56%; outline: 0px solid #ccc; }
+div.row > div.col-md-6 { text-align: center; }
+div.row > div.col-md-6 > img.img-logo { display: inline-block; }
 
 @media (max-width:951px)  
 { 
@@ -43,11 +48,11 @@ img.img-logo { width: 78%; outline: 0px solid #ccc; }
 @media (max-width:480px)  
 { 
     div#content { margin: 0em; }
-    div.row > div.col-md-5 > h6 { font-weight: 400; font-size: 25pt; text-align: center; margin: 1.8em 0em; }
+    div.row > div.col-md-6 > h6 { font-weight: 400; font-size: 25pt; text-align: center; margin: 1.8em 0em; }
     div.home_left_img { text-align: center; }
     div.home_left_img > img { display: inline-block; }
-    div.row > div.col-md-5 { text-align: center; }
-    div.row > div.col-md-5 > img.img-logo { display: inline-block; }
+    div.row > div.col-md-6 { text-align: center; }
+    div.row > div.col-md-6 > img.img-logo { display: inline-block; }
     img.img-logo { width: 58%; outline: 0px solid #ccc; }
     /* smartphones, Android phones, landscape iPhone */ 
     div.row > div.col-lg-4 { outline: 0px solid #ccc; margin: 1.2em 0em; }
