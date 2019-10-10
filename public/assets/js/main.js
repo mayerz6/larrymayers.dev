@@ -12,8 +12,8 @@ window.onload = function() {
 
         xhr.onreadystatechange = function(){
             if(this.readyState == 4 && this.status == 200){
-                let block = document.getElementById("content");
-                block.innerHTML = this.responseText;
+               let block = document.getElementById("content");
+               block.innerHTML = this.responseText;
               //   console.log(this.responseText);
             }
         }
@@ -36,7 +36,7 @@ window.onload = function() {
 
        xhr.onreadystatechange = function(){
            if(this.readyState == 4 && this.status == 200){
-            // console.log(this.responseText);
+          //   console.log(this.responseText);
            let block = document.getElementById("content");
        
           block.innerHTML = this.responseText;
