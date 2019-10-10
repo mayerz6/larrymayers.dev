@@ -28,7 +28,13 @@ div#content { margin-left: 3.2em; }
 .space { margin-top: 1.2em; }
 img.img-logo { width: 56%; outline: 0px solid #ccc; }
 div.row > div.col-md-6 { text-align: center; }
+div.row > div.col-md-4 { text-align: center; }
 div.row > div.col-md-6 > img.img-logo { display: inline-block; }
+div.row > div.col-md-4 > h6.des { font-weight: 600; width: auto; height: auto; display: inline-block; margin: 0em; outline: 0px solid #ccc; }
+div.space > div.col-md-4 { width: 120px; height: 106px; outline: 0px solid #ccc; }
+div.row > div.col-md-4 > img.img-logo { display: inline-block; }
+
+
 
 @media (max-width:951px)  
 { 
