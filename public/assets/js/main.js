@@ -1,8 +1,34 @@
-window.onload = function() {
+window.onload = function() {  /* Functionality to work initial on site page load. */
 
-        let aboutLink = document.getElementById('about');
-        let expertLink = document.getElementById('expert');
+        const aboutLink = document.getElementById('about');
+        const expertLink = document.getElementById('expert');
+        const contactLink = document.getElementById('contact');
   
+    contactLink.addEventListener('click', function(){
+        console.log("Contact Page Rendered!!!");
+
+        let xhr = new XMLHttpRequest();
+
+        xhr.open('GET', './assets/regions/content/contact.html', true);
+
+        xhr.onreadystatechange = function(){
+            if(this.readyState == 4 && this.status == 200){
+               let block = document.getElementById("content");
+               block.innerHTML = this.responseText;
+              //   console.log(this.responseText);
+            }
+        }
+
+        xhr.onerror = function(){
+            console.log("Data request error...");
+        }
+ 
+        xhr.send();
+ 
+    });  
+
+
+
     expertLink.addEventListener('click', function(){
        console.log("Expertise Page Rendered!!!");
       
@@ -50,8 +76,8 @@ window.onload = function() {
 
        xhr.send();
 
-
     });
+
 
 
 }
