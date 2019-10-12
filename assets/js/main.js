@@ -6,7 +6,6 @@ window.onload = function() {  /* Functionality to work initial on site page load
   
     contactLink.addEventListener('click', function(){
     //    console.log("Contact Page Rendered!!!");
-
         let xhr = new XMLHttpRequest();
 
         xhr.open('GET', './assets/regions/content/contact.html', true);
@@ -15,6 +14,7 @@ window.onload = function() {  /* Functionality to work initial on site page load
             if(this.readyState == 4 && this.status == 200){
                let block = document.getElementById("content");
                block.innerHTML = this.responseText;
+               console.clear()
               //   console.log(this.responseText);
             }
         }
@@ -24,6 +24,7 @@ window.onload = function() {  /* Functionality to work initial on site page load
         }
  
         xhr.send();
+        console.clear()
  
     });  
 
@@ -40,6 +41,7 @@ window.onload = function() {  /* Functionality to work initial on site page load
             if(this.readyState == 4 && this.status == 200){
                let block = document.getElementById("content");
                block.innerHTML = this.responseText;
+               console.clear()
               //   console.log(this.responseText);
             }
         }
@@ -49,7 +51,7 @@ window.onload = function() {  /* Functionality to work initial on site page load
        }
 
        xhr.send();
-
+       console.clear()
     });
 
     aboutLink.addEventListener('click', function(){
@@ -64,9 +66,8 @@ window.onload = function() {  /* Functionality to work initial on site page load
            if(this.readyState == 4 && this.status == 200){
           //   console.log(this.responseText);
            let block = document.getElementById("content");
-       
-          block.innerHTML = this.responseText;
-        
+                 block.innerHTML = this.responseText;
+                 console.clear()
            }
        }
 
@@ -75,6 +76,7 @@ window.onload = function() {  /* Functionality to work initial on site page load
        }
 
        xhr.send();
+       console.clear()
 
     });
 
