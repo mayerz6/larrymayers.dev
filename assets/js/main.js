@@ -5,7 +5,7 @@ window.onload = function() {  /* Functionality to work initial on site page load
         const contactLink = document.getElementById('contact');
   
     contactLink.addEventListener('click', function(){
-        console.log("Contact Page Rendered!!!");
+    //    console.log("Contact Page Rendered!!!");
 
         let xhr = new XMLHttpRequest();
 
@@ -30,7 +30,7 @@ window.onload = function() {  /* Functionality to work initial on site page load
 
 
     expertLink.addEventListener('click', function(){
-       console.log("Expertise Page Rendered!!!");
+     //  console.log("Expertise Page Rendered!!!");
       
         let xhr = new XMLHttpRequest();
 
