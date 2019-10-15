@@ -1,4 +1,11 @@
-window.onload = function() {  /* Functionality to work initial on site page load. */
+if(document.readyState == 'loading') {
+    document.addEventListener('DOMContentLoaded', ready)
+} else {
+    ready()
+}
+
+
+function ready() {  /* Functionality to work initial on site page load. */
 
         const aboutLink = document.getElementById('about');
         const expertLink = document.getElementById('expert');
@@ -79,8 +86,6 @@ window.onload = function() {  /* Functionality to work initial on site page load
        console.clear()
 
     });
-
-
 
 }
 
