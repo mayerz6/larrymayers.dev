@@ -25,10 +25,11 @@ aside.social_widget { outline: 0px solid #ccc; }
 aside.social_widget > ul.list > li { margin: 0em 0.8em; display: inline-block; outline: 0px solid #ccc; }
 span.copyright { margin-top: 2em; display: block; }
 div#content { margin-left: 3.2em; }
-.space { margin-top: 1.2em; }
+.space { margin-top: 1.2em; display: grid; grid-gap: 20px; grid-template-columns: 1fr 1fr 1fr; }
 img.img-logo { width: 56%; outline: 0px solid #ccc; }
 div.row > div.col-md-6 { text-align: center; }
 div.row > div.col-md-4 { text-align: center; }
+div.row > div.icon {height: 160px;  text-align: center; margin: auto; }
 div.row > div.col-md-6 > img.img-logo { display: inline-block; }
 div.row > div.col-md-4 > h6.des { font-weight: 600; width: auto; height: auto; display: block; margin: 0em; outline: 0px solid #ccc; }
 div.space > div.col-md-4 { width: 120px; height: 106px; outline: 0px solid #ccc; }
