@@ -10,7 +10,7 @@ if(document.readyState == 'loading') {
 
 function ready() {  /* Functionality to work initial on site page load. */
 
-        const aboutLink = document.getElementById('about');
+     //   const aboutLink = document.getElementById('about');
         const expertLink = document.getElementById('expert');
         const contactLink = document.getElementById('contact');
   
@@ -37,7 +37,6 @@ function ready() {  /* Functionality to work initial on site page load. */
         console.clear()
  
     });  
-
 
 
     expertLink.addEventListener('click', function(){
