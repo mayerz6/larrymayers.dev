@@ -27,7 +27,7 @@ span.copyright { margin-top: 2em; display: block; }
 div#content { margin-left: 3.2em; }
 /* CSS Grid Stylings */
 .space { margin-top: 1.2em; display: grid; grid-gap: 20px; grid-template-columns: 1fr 1fr 1fr; }
-
+section div.row { margin-top: 2em; }
 img.img-logo { width: 56%; outline: 0px solid #ccc; }
 div.row > div.col-md-6 { text-align: center; }
 div.row > div.col-md-4 { text-align: center; }
