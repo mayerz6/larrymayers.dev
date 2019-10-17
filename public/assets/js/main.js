@@ -1,7 +1,10 @@
 if(document.readyState == 'loading') {
     document.addEventListener('DOMContentLoaded', ready)
 } else {
-    ready()
+    /* Execute function ONLY if the site's content has been loaded completely  */
+    if(window.onload) {
+        ready()
+    }
 }
 
 
