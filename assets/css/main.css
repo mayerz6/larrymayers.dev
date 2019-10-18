@@ -27,22 +27,31 @@ aside.social_widget > ul.list > li { margin: 0em 0.8em; display: inline-block; o
 span.copyright { margin-top: 2em; display: block; }
 div#content { margin-left: 3.2em; }
 /* CSS Grid Stylings */
-.space { margin-top: 1.2em; display: grid; grid-gap: 20px; grid-template-columns: 1fr 1fr 1fr; }
+.space { margin-top: 1.2em; display: grid; grid-gap: 12px; grid-template-columns: 1fr 1fr 1fr; }
 section div.row { margin-top: 2em; }
-img.img-logo { width: 56%; outline: 0px solid #ccc; }
+img.img-logo { width: 48%; outline: 0px solid #ccc; }
 div.row > div.col-md-6 { text-align: center; }
 div.row > div.col-md-4 { text-align: center; }
-div.row > div.icon {height: 160px;  text-align: center; margin: auto; }
+div.row > div.icon { height: auto;  text-align: center; }
 div.row > div.col-md-6 > img.img-logo { display: inline-block; }
 div.row > div.col-md-4 > h6.des { font-weight: 600; width: auto; height: auto; display: block; margin: 0em; outline: 0px solid #ccc; }
 div.space > div.col-md-4 { width: 120px; height: 106px; outline: 0px solid #ccc; }
 div.row > div.col-md-4 > img.img-logo { display: inline-block; }
 
 
+div.row > div.icon > .des { margin: 10px auto; }
+img.img-logo-css { width: 48%; outline: 0px solid #ccc; }
+img.img-logo-js { width: 58%; outline: 0px solid #ccc; }
+img.img-logo-react { width: 68%; outline: 0px solid #ccc; }
+img.img-logo-laravel { width: 78%; outline: 0px solid #ccc; }
+img.img-logo-symfony { width: 100%; outline: 0px solid #ccc; }
+img.img-logo-php { width: 100%; outline: 0px solid #ccc; }
+img.img-logo-git { width: 58%; outline: 0px solid #ccc; }
+img.img-logo-dotnet { width: 88%; outline: 0px solid #ccc; }
+img.img-logo-vbnet { width: 58%; outline: 0px solid #ccc; }
 
 @media (max-width:951px)  
 { 
-
     /* smartphones, Android phones, landscape iPhone */ 
     div.row > div.col-lg-4 { outline: 0px solid #ccc; margin: 1.2em 0em; }
     div.home_left_img > img { width: 48%; }
@@ -73,16 +82,17 @@ div.row > div.col-md-4 > img.img-logo { display: inline-block; }
 @media (max-width:480px)  
 { 
     
-.navbar-nav { flex-direction: row; }
-.navbar-light .navbar-nav .nav-item .nav-link { margin: 0 1.4em !important;}
+    .navbar-nav { flex-direction: row; }
+    .navbar-light .navbar-nav .nav-item .nav-link { margin: 0 1.4em !important; }
     div#content { margin: 0em; }
     div.row > div.col-md-6 > h6 { font-weight: 400; font-size: 25pt; text-align: center; margin: 1.8em 0em; }
     div.home_left_img { text-align: center; }
     div.home_left_img > img { display: inline-block; }
     div.row > div.col-md-6 { text-align: center; }
     div.row > div.col-md-6 > img.img-logo { display: inline-block; }
-    img.img-logo { width: 58%; outline: 0px solid #ccc; }
+    
     /* smartphones, Android phones, landscape iPhone */ 
     div.row > div.col-lg-4 { outline: 0px solid #ccc; margin: 1.2em 0em; }
     div.home_left_img > img { width: 80%; }
+
 }
