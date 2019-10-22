@@ -16,6 +16,7 @@ a {
       outline: none; }
 
 header { margin-bottom: 2em; }
+a.nav-link:hover{ cursor:pointer; }
 div.footer-area { margin: 2em 0em; padding-top: 2em; border-top: 1px solid #777777; }
 div.home_left_img { outline: 0px solid #000; }
 div.home_left_img > img { width: 100%; }
@@ -50,7 +51,7 @@ img.img-logo-git { width: 58%; outline: 0px solid #ccc; }
 img.img-logo-dotnet { width: 88%; outline: 0px solid #ccc; }
 img.img-logo-vbnet { width: 58%; outline: 0px solid #ccc; }
 
-@media (max-width:951px)  
+@media screen and (max-width:951px)  
 { 
     /* smartphones, Android phones, landscape iPhone */ 
     div.row > div.col-lg-4 { outline: 0px solid #ccc; margin: 1.2em 0em; }
@@ -72,14 +73,23 @@ img.img-logo-vbnet { width: 58%; outline: 0px solid #ccc; }
 }
 
 
-@media (max-width:743px)  {
+@media screen and (max-width:743px)  {
     div.home_left_img > img { width: 78%; }
     img.pro-logo { margin: 2% 40%; outline: 1px solid #ccc; }
     .navbar-light .navbar-nav .nav-item .nav-link { margin: 0 1.0em !important; font-size: 0.96em; }
 }
 
 
-@media (max-width:480px)  
+@media screen and (min-width: 479px) and (max-width:660px)  {
+    div.home_left_img > img { width: 78%; }
+    img.pro-logo { margin: 2% 40%; outline: 1px solid #ccc; }
+    nav.navbar { outline: 1px solid #000; flex-direction: row; }
+    .navbar-light .navbar-nav .nav-item .nav-link { margin: 0 1.4em !important; }
+}
+
+
+
+@media screen and (max-width:480px)  
 { 
     
     .navbar-nav { flex-direction: row; }
