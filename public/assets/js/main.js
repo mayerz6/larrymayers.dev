@@ -7,14 +7,15 @@ if(document.readyState == 'loading') {
     }
 }
 
-
 function ready() {  /* Functionality to work initial on site page load. */
 
         const aboutLink = document.getElementById('about');
         const expertLink = document.getElementById('expert');
         const contactLink = document.getElementById('contact');
-  
-    contactLink.addEventListener('click', function(){
+     //   const certLink = document.getElementById('certs');
+      
+
+    contactLink.addEventListener('click', () => {
     //    console.log("Contact Page Rendered!!!");
         let xhr = new XMLHttpRequest();
 
@@ -39,7 +40,7 @@ function ready() {  /* Functionality to work initial on site page load. */
     });  
 
 
-    expertLink.addEventListener('click', function(){
+    expertLink.addEventListener('click', () => {
      //  console.log("Expertise Page Rendered!!!");
       
         let xhr = new XMLHttpRequest();
@@ -62,6 +63,8 @@ function ready() {  /* Functionality to work initial on site page load. */
        xhr.send();
        console.clear()
     });
+
+
 
     aboutLink.addEventListener('click', function(){
        // console.log("About Page Rendered!!!");
