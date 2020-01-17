@@ -12,7 +12,10 @@ function ready() {  /* Functionality to work initial on site page load. */
         const aboutLink = document.getElementById('about');
         const expertLink = document.getElementById('expert');
         const contactLink = document.getElementById('contact');
-     //   const certLink = document.getElementById('certs');
+         const block = document.getElementById("content");
+    
+    //   const certLink = document.getElementById('certs');
+    
       
 
     contactLink.addEventListener('click', () => {
@@ -23,7 +26,7 @@ function ready() {  /* Functionality to work initial on site page load. */
 
         xhr.onreadystatechange = function(){
             if(this.readyState == 4 && this.status == 200){
-               let block = document.getElementById("content");
+             //  let block = document.getElementById("content");
                block.innerHTML = this.responseText;
                console.clear()
               //   console.log(this.responseText);
@@ -49,7 +52,7 @@ function ready() {  /* Functionality to work initial on site page load. */
 
         xhr.onreadystatechange = function(){
             if(this.readyState == 4 && this.status == 200){
-               let block = document.getElementById("content");
+           //    let block = document.getElementById("content");
                block.innerHTML = this.responseText;
                console.clear()
               //   console.log(this.responseText);
@@ -77,7 +80,7 @@ function ready() {  /* Functionality to work initial on site page load. */
        xhr.onreadystatechange = function(){
            if(this.readyState == 4 && this.status == 200){
           //   console.log(this.responseText);
-           let block = document.getElementById("content");
+       //    let block = document.getElementById("content");
                  block.innerHTML = this.responseText;
                  console.clear()
            }
