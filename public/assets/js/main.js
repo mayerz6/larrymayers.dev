@@ -18,7 +18,7 @@ function ready() {  /* Functionality to work initial on site page load. */
       
 
     contactLink.addEventListener('click', () => {
-    //    console.log("Contact Page Rendered!!!");
+  
         let xhr = new XMLHttpRequest();
 
         xhr.open('GET', './assets/regions/content/contact.html', true);
@@ -74,13 +74,11 @@ function ready() {  /* Functionality to work initial on site page load. */
        // Creation of the new XHR Object
        let xhr = new XMLHttpRequest();
 
-       xhr.open('GET', './assets/regions/content/about.html', true);
+       xhr.open('GET', 'assets/regions/content/about.html', true);
 
        xhr.onreadystatechange = function(){
            if(this.readyState == 4 && this.status == 200){
-          //   console.log(this.responseText);
-       //    let block = document.getElementById("content");
-                 block.innerHTML = this.responseText;
+             block.innerHTML = this.responseText;
                  console.clear()
            }
        }
@@ -106,7 +104,7 @@ function ready() {  /* Functionality to work initial on site page load. */
                     console.log('Fetch error occurred', err);
                 });         
 
-    // Unique approach to inserting content within the site dynamically.   
+ // Unique approach to inserting content within the site dynamically.   
     fetch("./assets/regions/footer.html").then(function(response){
             return response.text();
         }).then(function(string){
