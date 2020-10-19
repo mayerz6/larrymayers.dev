@@ -58,7 +58,7 @@ class Nav{
            // let block = document.getElementById("content");
            //   block.innerHTML = this.responseText;
               //console.clear()
-                console.log(this.responseText);
+               // console.log(this.responseText);
            }
        }
    
@@ -87,7 +87,7 @@ class Nav{
                // let block = document.getElementById("content");
                //   block.innerHTML = this.responseText;
                   //console.clear()
-                    console.log(this.responseText);
+                  //  console.log(this.responseText);
                }
            }
        
@@ -114,7 +114,7 @@ class Nav{
                // let block = document.getElementById("content");
                //   block.innerHTML = this.responseText;
                   //console.clear()
-                    console.log(this.responseText);
+                  //  console.log(this.responseText);
                }
            }
        
@@ -141,7 +141,7 @@ class Nav{
                 // let block = document.getElementById("content");
                 //   block.innerHTML = this.responseText;
                    //console.clear()
-                     console.log(this.responseText);
+                 //    console.log(this.responseText);
                 }
             }
         
