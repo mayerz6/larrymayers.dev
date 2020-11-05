@@ -8,16 +8,11 @@
                 <div class="col-md-12">
                     <span>I&#39;m always willing to engage...</span>
                     <hr>        
-                    <!-- <small>REACH ME AT</small>
-                         
-                          <b>larry.mayers@outlook.com</b>
-                 -->
-              
+                          
                 </div>
                 <div class="col-md-12">
                     
-                    <form>
-                            <div class="form-group">
+                       <div class="form-group">
                               <label for="exampleInputEmail1">Email address</label>
                               <input type="email" class="form-control" id="emailInput" placeholder="Your preferred email">
                               <input type="hidden" id="hidden" />
@@ -25,7 +20,7 @@
                             </div>
                             <div class="form-group">
                                     <label for="exampleFormControlSelect2">Choose your desired topic</label>
-                                    <select class="form-control" id="exampleFormControlSelect2">
+                                    <select class="form-control" id="msgTopic">
                                       <option>Select your topic</option>
                                       <option>Technical Consultancy</option>
                                       <option>Mentorship Queries</option>
@@ -33,12 +28,14 @@
                                       <option>General Feedback</option>
                                     </select>
                          </div>
-                         <div class="form-group">
-                                  <textarea name="career[message]" class="form-control" rows="6" tabindex="4"
+                              <div class="form-group">
+                                  <textarea id="feedbackMsg" name="career[message]" class="form-control" rows="6" tabindex="4"
                                   placeholder="Write your details" required></textarea>      
                                 </div>
-                            <button type="submit" class="btn btn-primary">Submit</button>
-                          </form>
+                           
+                                <button id="btnSubmit" type="submit" class="btn btn-primary">Submit</button>
+                          
+                            
                 </div>
         </div>
     </div>
