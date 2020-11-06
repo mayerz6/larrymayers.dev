@@ -124,25 +124,8 @@ class Nav{
                 if(this.readyState == 4 && this.status == 200){
                  document.getElementById("screen-msg").innerHTML = this.responseText;
         
-                 /* Design a function which will handle the processing of data submitted by the user. */
-                    /* this.emailInput <=> let emailInput */
-                    let emailInput = document.getElementById("emailInput");
-                    let msgTopic = document.getElementById("msgTopic");
-                    let usrMsg = document.getElementById("feedbackMsg");
+                new Form();
 
-                    let btnSubmit = document.getElementById("btnSubmit");
-                    
-                    
-                    btnSubmit.addEventListener("click", () => {
-                        
-                        let requestData = `email=${emailInput.value}`;
-                        requestData += `msgTopic=${msgTopic.value}`;
-                        requestData += `usrMsg=${usrMsg.value}`;
-                            
-                            console.log('Contact Form Submitted!');
-                            console.log(requestData);
-
-                        });
                 }
             }
         
@@ -160,10 +143,150 @@ class Nav{
 
 }
 
-function processFormData(){
+/* Designation of the CLASS used to validate our user input. */
+class Validator {
 
-   
+    static REQUIRED = "REQUIRED";
+    static MIN_LENGTH = "MIN_LENGTH";
+    static NUMBER = "NUMBER";
+    static MAX_LENGTH = "MAX_LENGTH";
+    static DROP_BOX = "DROP_BOX";
+
+static validate(value, flag, validatorValue){
+    if(flag === this.REQUIRED){
+        return value.trim().length > 0;
+    }
+    if(flag === this.MIN_LENGTH){
+        return value.trim().length > validatorValue;
+    }
+    if(flag === this.MAX_LENGTH){
+        return value.length < validatorValue;
+    }
+    if(flag === this.NUMBER){
+        return isNaN(value) ;
+    }if(flag === this.DROP_BOX){
+        return value > 0;
+    }
 }
+
+
+}
+
+class Form{
+
+    constructor(){
+    
+        /* Design a function which will handle the processing of data submitted by the user. */
+           /* this.emailInput <=> let emailInput */
+           let emailInput = document.getElementById("emailInput");
+           let emailErrorMsg = document.getElementById("emailErrorMsg");
+           let msgTopic = document.getElementById("msgTopic");
+           let topicErrorMsg = document.getElementById("topicErrorMsg");
+           let usrMsg = document.getElementById("feedbackMsg");
+           let feedbackErrorMsg = document.getElementById("feedbackErrorMsg");
+           
+           let btnSubmit = document.getElementById("btnSubmit");
+
+
+msgTopic.addEventListener("blur", () => {
+
+    /* TOPIC SELECTION Check */
+if(!Validator.validate(msgTopic.value, Validator.DROP_BOX)){
+    topicErrorMsg.innerText = "Please select a feedback topic!";
+    msgTopic.style = "border-color: #ff0000;";
+    topicErrorMsg.style = "color: #ff0000;";
+
+    return;
+    
+} else if (Validator.validate(msgTopic.value, Validator.DROP_BOX)){
+
+    topicErrorMsg.innerText = "";
+    msgTopic.style = "border-color: #2ecc71;";
+    topicErrorMsg.style = "display: none";
+
+}
+ 
+});
+
+usrMsg.addEventListener("blur", () => {
+    
+ /* MESSAGE Check */
+ if(!Validator.validate(usrMsg.value, Validator.REQUIRED)){
+    feedbackErrorMsg.innerText = "Blank feedback NOT allowed!!!";
+    usrMsg.style = "border-color: #ff0000;";
+    feedbackErrorMsg.style = "color: #ff0000;";
+
+    return;
+    
+} else if(!Validator.validate(usrMsg.value, Validator.MAX_LENGTH, 10)){
+    feedbackErrorMsg.innerText = "Feedback exceeds limit!";
+    usrMsg.style = "border-color: #ff0000;";
+    feedbackErrorMsg.style = "color: #ff0000;";
+
+    return;
+
+}else if(Validator.validate(usrMsg.value, Validator.REQUIRED)){
+
+    feedbackErrorMsg.innerText = "";
+    usrMsg.style = "border-color: #2ecc71;";
+    feedbackErrorMsg.style = "display: none";
+
+}
+ 
+
+});
+
+emailInput.addEventListener("blur", () => {
+ /* EMAIL Check */
+ if(!Validator.validate(emailInput.value, Validator.REQUIRED)){
+    emailErrorMsg.innerText = "Missing Email Info!";
+    emailInput.style = "border-color: #ff0000;";
+    emailErrorMsg.style = "color: #ff0000;";
+
+    return;
+
+} else if(!Validator.validate(emailInput.value, Validator.NUMBER)){
+    emailErrorMsg.innerText = "Emails don't have in numbers!";
+    emailInput.style = "border-color: #ff0000;";
+    emailErrorMsg.style = "color: #ff0000;";
+
+    return;
+
+} else if(Validator.validate(emailInput.value, Validator.NUMBER)) {
+
+    emailErrorMsg.innerText = "";
+    emailInput.style = "border-color: #2ecc71;";
+    emailErrorMsg.style = "display: none";
+
+}
+
+});          
+
+btnSubmit.addEventListener("click", () => {
+    
+    /* Must validate the user input before processing. */
+    
+    let requestData = `email=${emailInput.value}`;
+    requestData += `msgTopic=${msgTopic.value}`;
+    requestData += `usrMsg=${usrMsg.value}`;
+        
+        console.log('Contact Form Submitted!');
+        console.log(requestData);
+
+    });
+
+
+
+}
+
+
+    static processFormData(){
+    
+       
+    }
+
+}
+
 
 new Nav();
 
