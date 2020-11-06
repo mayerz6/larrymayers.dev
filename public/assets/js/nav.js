@@ -7,13 +7,13 @@ class Nav{
         
             this.aboutLink = document.getElementById("about");
             this.expertLink = document.getElementById("expert");
-            this.certLink = document.getElementById("certs");
+          //  this.certLink = document.getElementById("certs");
             this.contactLink = document.getElementById("contact");
             this.content = document.getElementById("screen-msg");
       
             this.aboutLink.addEventListener("click", this.clickAboutHandler);
             this.expertLink.addEventListener("click", this.clickExpertHandler);
-            this.certLink.addEventListener("click", this.clickCertHandler);
+          //  this.certLink.addEventListener("click", this.clickCertHandler);
             this.contactLink.addEventListener("click", this.clickContactHandler);
             
                // Unique approach to inserting content within the site dynamically.
@@ -151,6 +151,7 @@ class Validator {
     static NUMBER = "NUMBER";
     static MAX_LENGTH = "MAX_LENGTH";
     static DROP_BOX = "DROP_BOX";
+    static EMAIL = "EMAIL";
 
 static validate(value, flag, validatorValue){
     if(flag === this.REQUIRED){
@@ -164,8 +165,12 @@ static validate(value, flag, validatorValue){
     }
     if(flag === this.NUMBER){
         return isNaN(value) ;
-    }if(flag === this.DROP_BOX){
+    }
+    if(flag === this.DROP_BOX){
         return value > 0;
+    }
+    if(flag === this.EMAIL){
+        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
     }
 }
 
@@ -174,104 +179,120 @@ static validate(value, flag, validatorValue){
 
 class Form{
 
+
+   
     constructor(){
     
         /* Design a function which will handle the processing of data submitted by the user. */
            /* this.emailInput <=> let emailInput */
-           let emailInput = document.getElementById("emailInput");
-           let emailErrorMsg = document.getElementById("emailErrorMsg");
-           let msgTopic = document.getElementById("msgTopic");
-           let topicErrorMsg = document.getElementById("topicErrorMsg");
-           let usrMsg = document.getElementById("feedbackMsg");
-           let feedbackErrorMsg = document.getElementById("feedbackErrorMsg");
-           
-           let btnSubmit = document.getElementById("btnSubmit");
+           this.emailInput = document.getElementById("emailInput");
+           this.emailErrorMsg = document.getElementById("emailErrorMsg");
+           this.emailValid = false;
+           this.msgTopic = document.getElementById("msgTopic");
+           this.topicErrorMsg = document.getElementById("topicErrorMsg");
+           this.topicValid = false;
+           this.usrMsg = document.getElementById("feedbackMsg");
+           this.feedbackErrorMsg = document.getElementById("feedbackErrorMsg");
+           this.msgValid = false;
+           this.emailConfirm = document.getElementById("emailConfirm");
+           this.btnSubmit = document.getElementById("btnSubmit");
 
 
-msgTopic.addEventListener("blur", () => {
+this.msgTopic.addEventListener("blur", () => {
 
     /* TOPIC SELECTION Check */
-if(!Validator.validate(msgTopic.value, Validator.DROP_BOX)){
-    topicErrorMsg.innerText = "Please select a feedback topic!";
-    msgTopic.style = "border-color: #ff0000;";
-    topicErrorMsg.style = "color: #ff0000;";
+if(!Validator.validate(this.msgTopic.value, Validator.DROP_BOX)){
+    this.topicErrorMsg.innerText = "Please select a feedback topic!";
+    this.msgTopic.style = "border-color: #ff0000;";
+    this.topicErrorMsg.style = "color: #ff0000;";
 
     return;
     
-} else if (Validator.validate(msgTopic.value, Validator.DROP_BOX)){
+} else if (Validator.validate(this.msgTopic.value, Validator.DROP_BOX)){
 
-    topicErrorMsg.innerText = "";
-    msgTopic.style = "border-color: #2ecc71;";
-    topicErrorMsg.style = "display: none";
+    this.topicErrorMsg.innerText = "";
+    this.msgTopic.style = "border-color: #2ecc71;";
+    this.topicErrorMsg.style = "display: none";
 
+    this.topicValid = true;
 }
  
 });
 
-usrMsg.addEventListener("blur", () => {
+this.usrMsg.addEventListener("blur", () => {
     
  /* MESSAGE Check */
- if(!Validator.validate(usrMsg.value, Validator.REQUIRED)){
-    feedbackErrorMsg.innerText = "Blank feedback NOT allowed!!!";
-    usrMsg.style = "border-color: #ff0000;";
-    feedbackErrorMsg.style = "color: #ff0000;";
+ if(!Validator.validate(this.usrMsg.value, Validator.REQUIRED)){
+    this.feedbackErrorMsg.innerText = "Blank feedback NOT allowed!!!";
+    this.usrMsg.style = "border-color: #ff0000;";
+    this.feedbackErrorMsg.style = "color: #ff0000;";
 
     return;
     
-} else if(!Validator.validate(usrMsg.value, Validator.MAX_LENGTH, 10)){
-    feedbackErrorMsg.innerText = "Feedback exceeds limit!";
-    usrMsg.style = "border-color: #ff0000;";
-    feedbackErrorMsg.style = "color: #ff0000;";
+} else if(!Validator.validate(this.usrMsg.value, Validator.MAX_LENGTH, 140)){
+    this.feedbackErrorMsg.innerText = "Feedback exceeds limit!";
+    this.usrMsg.style = "border-color: #ff0000;";
+    this.feedbackErrorMsg.style = "color: #ff0000;";
 
     return;
 
-}else if(Validator.validate(usrMsg.value, Validator.REQUIRED)){
+}else if(Validator.validate(this.usrMsg.value, Validator.REQUIRED)){
 
-    feedbackErrorMsg.innerText = "";
-    usrMsg.style = "border-color: #2ecc71;";
-    feedbackErrorMsg.style = "display: none";
+    this.feedbackErrorMsg.innerText = "";
+    this.usrMsg.style = "border-color: #2ecc71;";
+    this.feedbackErrorMsg.style = "display: none";
 
+    this.msgValid = true;
 }
  
 
 });
 
-emailInput.addEventListener("blur", () => {
+this.emailInput.addEventListener("blur", () => {
  /* EMAIL Check */
- if(!Validator.validate(emailInput.value, Validator.REQUIRED)){
-    emailErrorMsg.innerText = "Missing Email Info!";
-    emailInput.style = "border-color: #ff0000;";
-    emailErrorMsg.style = "color: #ff0000;";
+ if(!Validator.validate(this.emailInput.value, Validator.REQUIRED)){
+    this.emailErrorMsg.innerText = "Missing Email Info!";
+    this.emailInput.style = "border-color: #ff0000;";
+    this.emailErrorMsg.style = "color: #ff0000;";
 
     return;
 
-} else if(!Validator.validate(emailInput.value, Validator.NUMBER)){
-    emailErrorMsg.innerText = "Emails don't have in numbers!";
-    emailInput.style = "border-color: #ff0000;";
-    emailErrorMsg.style = "color: #ff0000;";
+} else if(!Validator.validate(this.emailInput.value, Validator.EMAIL)){
+    this.emailErrorMsg.innerText = "Email format incorrect!";
+    this.emailInput.style = "border-color: #ff0000;";
+    this.emailErrorMsg.style = "color: #ff0000;";
 
     return;
 
-} else if(Validator.validate(emailInput.value, Validator.NUMBER)) {
+} else if(Validator.validate(this.emailInput.value, Validator.EMAIL)) {
 
-    emailErrorMsg.innerText = "";
-    emailInput.style = "border-color: #2ecc71;";
-    emailErrorMsg.style = "display: none";
+    this.emailErrorMsg.innerText = "";
+    this.emailInput.style = "border-color: #2ecc71;";
+    this.emailErrorMsg.style = "display: none";
 
+    this.emailValid = true;
 }
 
 });          
 
-btnSubmit.addEventListener("click", () => {
+this.btnSubmit.addEventListener("click", () => {
     
     /* Must validate the user input before processing. */
-    
-    let requestData = `email=${emailInput.value}`;
-    requestData += `msgTopic=${msgTopic.value}`;
-    requestData += `usrMsg=${usrMsg.value}`;
+    if(this.emailValid && this.msgValid && this.topicValid){
         
-        console.log('Contact Form Submitted!');
-        console.log(requestData);
+            let requestData = `email=${this.emailInput.value}`;
+            requestData += `msgTopic=${this.msgTopic.value}`;
+            requestData += `usrMsg=${this.usrMsg.value}`;
+            this.emailConfirm.innerHTML = "<b>Email Successfully Sent!</b>";
+
+                console.log('Contact Form Submitted!');
+                console.log(requestData);
+
+               this.formDataDestroy();
+               // this.emailConfirm.opacity = 0;
+           
+             
+    }
 
     });
 
@@ -279,6 +300,30 @@ btnSubmit.addEventListener("click", () => {
 
 }
 
+fadeIn(){
+
+}
+
+fadeOut(){
+
+  
+}
+
+formDataDestroy(){
+
+    this.emailInput.value = "";
+    this.emailValid = false;
+    this.emailInput.style = "border-color: #ced4da;";
+ 
+    this.msgTopic.value = 0;
+    this.topicValid = false;
+    this.msgTopic.style = "border-color: #ced4da;";
+
+    this.usrMsg.value = "";
+    this.msgValid = false;
+    this.usrMsg.style = "border-color: #ced4da;";
+
+}
 
     static processFormData(){
     
