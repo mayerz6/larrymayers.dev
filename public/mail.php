@@ -10,10 +10,8 @@
 // use PHPMailer;
 //use PHPMailer\PHPMailer\Exception;
 
+extract($_POST);
 
-$email = isset($_POST['email']) ? $_POST['email'] : '';
-$topic = isset($_POST['msgTopic']) ? $_POST['msgTopic'] : '';
-$message = isset($_POST['usrMsg']) ? $_POST['usrMsg'] : '';
 // $bevCost = isset($_POST['bevCost']) ? $_POST['bevCost'] : '';
 
 $valStatus = true;
@@ -24,12 +22,12 @@ if(!isset($email) || empty($email)){
     $errMsg[] = "Blank firstname entries are NOT allowed!!!";
 }
 
-if(!isset($topic) || empty($topic)){
+if(!isset($msgTopic) || empty($msgTopic)){
     $valStatus = false;
     $errMsg[] = "Blank surname entries are NOT allowed!!!";
 }
 
-if(!isset($message) || empty($message)){
+if(!isset($usrMsg) || empty($usrMsg)){
     $valStatus = false;
     $errMsg[] = "Blank contact entries are NOT allowed!!!";
 }
@@ -41,19 +39,19 @@ echo json_encode(
     )
     );
 
-    switch ($topic)  
+    switch ($msgTopic)  
     {     
         case 1:   
-            $topic = "Technical Consultancy";  
+            $msgTopic = "Technical Consultancy";  
                  break;  
         case 2:   
-            $topic = "Mentorship Queries";  
+            $msgTopic = "Mentorship Queries";  
                  break;  
         case 3:   
-            $topic = "Job Interests";  
+            $msgTopic = "Job Interests";  
                  break;  
         case 4:   
-            $topic = "General Feedback";  
+            $msgTopic = "General Feedback";  
                  break;    
     } 
 
@@ -93,25 +91,25 @@ $mail->Password = "M@y3rZ.S0urc3!6a";
 
 //From email address and name
 $mail->From = "info@larrymayers.site";
-$mail->FromName = "Larry Mayers Site - Contact Form Messages";
+$mail->FromName = "Larry Mayers";
 
 //To address and name
 $mail->addAddress("larry.mayers@outlook.com", "Larry Mayers");
-// $mail->addAddress("recepient1@example.com"); //Recipient name is optional
+// $mail->addAddress("info@larrymayers.site", "Larry Mayers"); //Recipient name is optional
 
 //Address to which recipient will reply
-$mail->addReplyTo("larrymayers101@gmail.com", "Reply");
+// $mail->addReplyTo("larrymayers101@gmail.com", "Reply");
 
 //CC and BCC
-// $mail->addCC("cc@example.com");
-// $mail->addBCC("bcc@example.com");
+ //$mail->addCC("info@larrymayers.site");
+//$mail->addBCC("larrymayers101@gmail.com");
 
 //Send HTML or Plain Text email
 $mail->isHTML(true);
 
 //Set the subject line
-$mail->Subject = "Site Contact Message";
-$mail->Body = "<p><b>" . $topic . "</b>: Please review order details below.</p><br>" . $message;
+$mail->Subject = "Larry Mayers Site - Contact Form Messages";
+$mail->Body = "<p><b>" . $msgTopic . "</b> - Please review the received message below.</p><br>" . $usrMsg;
 //$mail->AltBody = "This is the plain text version of the email content";
 
 
@@ -130,6 +128,8 @@ $mail->Body = "<p><b>" . $topic . "</b>: Please review order details below.</p><
 try {
     $mail->send();
     echo "Message has been sent successfully";
+   
+
 } catch (Exception $e) {
     echo "Mailer Error: " . $mail->ErrorInfo;
 }

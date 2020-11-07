@@ -279,18 +279,37 @@ this.btnSubmit.addEventListener("click", () => {
     
     /* Must validate the user input before processing. */
     if(this.emailValid && this.msgValid && this.topicValid){
-        
-            let requestData = `email=${this.emailInput.value}`;
-            requestData += `msgTopic=${this.msgTopic.value}`;
-            requestData += `usrMsg=${this.usrMsg.value}`;
-            this.emailConfirm.innerHTML = "<b>Email Successfully Sent!</b>";
 
+        const request = new XMLHttpRequest();
+
+        request.onload = () => {
+
+            this.emailConfirm.innerHTML = "<b>Email Successfully Sent!</b>";
+            this.emailConfirm.style = "color: #2ecc71;";
+
+      try {
+        // responseObject = JSON.parse(request.responseText);
+           console.log(request.responseText);
+          } catch(e) {
+           console.error(e);
+         }
                 console.log('Contact Form Submitted!');
                 console.log(requestData);
-
+    
                this.formDataDestroy();
                // this.emailConfirm.opacity = 0;
+
+        }
+        
+            let requestData = `email=${this.emailInput.value}`;
+            requestData += `&msgTopic=${this.msgTopic.value}`;
+            requestData += `&usrMsg=${this.usrMsg.value}`;
            
+            
+            request.open('post', './mail.php');
+            request.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+            request.send(requestData);
+
              
     }
 
