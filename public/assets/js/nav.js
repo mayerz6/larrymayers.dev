@@ -288,12 +288,21 @@ this.btnSubmit.addEventListener("click", () => {
 
       try {
         // responseObject = JSON.parse(request.responseText);
+<<<<<<< HEAD
          //  console.log(request.responseText);
           } catch(e) {
            console.error(e);
          }
                // console.log('Contact Form Submitted!');
                // console.log(requestData);
+=======
+           console.log(request.responseText);
+          } catch(e) {
+           console.error(e);
+         }
+                console.log('Contact Form Submitted!');
+                console.log(requestData);
+>>>>>>> 1d940fc07a60251683f1daaab0e47ad0cc5b377a
     
                this.formDataDestroy();
                // this.emailConfirm.opacity = 0;
@@ -308,9 +317,13 @@ this.btnSubmit.addEventListener("click", () => {
             request.open('post', './mail.php');
             request.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
             request.send(requestData);
+<<<<<<< HEAD
             this.emailConfirm.innerHTML = "...Sending Message";
             this.emailConfirm.style = "color: #EE5552;";
               
+=======
+
+>>>>>>> 1d940fc07a60251683f1daaab0e47ad0cc5b377a
              
     } else {
          

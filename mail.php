@@ -11,36 +11,25 @@
 //use PHPMailer\PHPMailer\Exception;
 
 
-$firstname = isset($_POST['firstname']) ? $_POST['firstname'] : '';
-$surname = isset($_POST['surname']) ? $_POST['surname'] : '';
-$contact = isset($_POST['contact']) ? $_POST['contact'] : '';
-$stuForm = isset($_POST['student-form']) ? $_POST['student-form'] : '';
-
-$mealType = isset($_POST['mealType']) ? $_POST['mealType'] : '';
-
-$meal = isset($_POST['meal']) ? $_POST['meal'] : '';
-$mealQuantity = isset($_POST['mealQty']) ? $_POST['mealQty'] : '';
-// $mealCost = isset($_POST['mealCost']) ? $_POST['mealCost'] : '';
-
-$bev = isset($_POST['beverage']) ? $_POST['beverage'] : '';
-$bevQuantity = isset($_POST['beverageQty']) ? $_POST['beverageQty'] : '';
-$orderComments = isset($_POST['order-comments']) ? $_POST['order-comments'] : '';
+$email = isset($_POST['email']) ? $_POST['email'] : '';
+$topic = isset($_POST['msgTopic']) ? $_POST['msgTopic'] : '';
+$message = isset($_POST['usrMsg']) ? $_POST['usrMsg'] : '';
 // $bevCost = isset($_POST['bevCost']) ? $_POST['bevCost'] : '';
 
 $valStatus = true;
 $errMsg = array();
 
-if(!isset($firstname) || empty($firstname)){
+if(!isset($email) || empty($email)){
     $valStatus = false;
     $errMsg[] = "Blank firstname entries are NOT allowed!!!";
 }
 
-if(!isset($surname) || empty($surname)){
+if(!isset($topic) || empty($topic)){
     $valStatus = false;
     $errMsg[] = "Blank surname entries are NOT allowed!!!";
 }
 
-if(!isset($contact) || empty($contact)){
+if(!isset($message) || empty($message)){
     $valStatus = false;
     $errMsg[] = "Blank contact entries are NOT allowed!!!";
 }
@@ -52,6 +41,21 @@ echo json_encode(
     )
     );
 
+    switch ($topic)  
+    {     
+        case 1:   
+            $topic = "Technical Consultancy";  
+                 break;  
+        case 2:   
+            $topic = "Mentorship Queries";  
+                 break;  
+        case 3:   
+            $topic = "Job Interests";  
+                 break;  
+        case 4:   
+            $topic = "General Feedback";  
+                 break;    
+    } 
 
     //PHPMailer Object
 $mail = new PHPMailer(true); //Argument true in constructor enables exceptions
@@ -84,12 +88,12 @@ $mail->SMTPSecure = 'tls';
 $mail->SMTPAuth = true;
 
 
-$mail->Username = "info@healthygourmet.shop";
-$mail->Password = "H3@lthy.G0urm3t!6";
+$mail->Username = "info@larrymayers.site";
+$mail->Password = "M@y3rZ.S0urc3!6a";
 
 //From email address and name
-$mail->From = "info@healthygourmet.shop";
-$mail->FromName = "Healthy Gourmet - Lunch Order Services";
+$mail->From = "info@larrymayers.site";
+$mail->FromName = "Larry Mayers Site - Contact Form Messages";
 
 //To address and name
 $mail->addAddress("larry.mayers@outlook.com", "Larry Mayers");
@@ -106,8 +110,8 @@ $mail->addReplyTo("larrymayers101@gmail.com", "Reply");
 $mail->isHTML(true);
 
 //Set the subject line
-$mail->Subject = "Lunch Order";
-$mail->Body = "<p><b>Wednesday</b>: Please review order details below.</p>";
+$mail->Subject = "Site Contact Message";
+$mail->Body = "<p><b>" . $topic . "</b>: Please review order details below.</p><br>" . $message;
 //$mail->AltBody = "This is the plain text version of the email content";
 
 
