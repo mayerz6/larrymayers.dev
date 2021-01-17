@@ -180,7 +180,6 @@ static validate(value, flag, validatorValue){
 class Form{
 
 
-   
     constructor(){
     
         /* Design a function which will handle the processing of data submitted by the user. */
@@ -279,20 +278,47 @@ this.btnSubmit.addEventListener("click", () => {
     
     /* Must validate the user input before processing. */
     if(this.emailValid && this.msgValid && this.topicValid){
-        
-            let requestData = `email=${this.emailInput.value}`;
-            requestData += `msgTopic=${this.msgTopic.value}`;
-            requestData += `usrMsg=${this.usrMsg.value}`;
+
+        const request = new XMLHttpRequest();
+
+        request.onload = () => {
+
             this.emailConfirm.innerHTML = "<b>Email Successfully Sent!</b>";
+            this.emailConfirm.style = "color: #2ecc71;";
 
-                console.log('Contact Form Submitted!');
-                console.log(requestData);
-
+      try {
+        // responseObject = JSON.parse(request.responseText);
+         //  console.log(request.responseText);
+          } catch(e) {
+           console.error(e);
+         }
+               // console.log('Contact Form Submitted!');
+               // console.log(requestData);
+    
                this.formDataDestroy();
                // this.emailConfirm.opacity = 0;
+
+        }
+        
+            let requestData = `email=${this.emailInput.value}`;
+            requestData += `&msgTopic=${this.msgTopic.value}`;
+            requestData += `&usrMsg=${this.usrMsg.value}`;
            
+            
+            request.open('post', './mail.php');
+            request.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+            request.send(requestData);
+            this.emailConfirm.innerHTML = "...Sending Message";
+            this.emailConfirm.style = "color: #EE5552;";
+              
              
-    }
+    } else {
+         
+        this.emailConfirm.innerHTML = "<b>Please complete the form details above.</b>";
+        this.emailConfirm.style = "color: #ff0000;";
+     
+    console.log("Message NOT Sent!");
+ }
 
     });
 
