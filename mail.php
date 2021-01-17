@@ -88,8 +88,8 @@ $mail->SMTPSecure = 'tls';
 $mail->SMTPAuth = true;
 
 
-$mail->Username = "info@larrymayers.site";
-$mail->Password = "M@y3rZ.S0urc3!6a";
+$mail->Username = "";
+$mail->Password = "";
 
 //From email address and name
 $mail->From = "info@larrymayers.site";
