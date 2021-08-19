@@ -1,47 +1,42 @@
 
-<hr>
-<h5 class="quote">Looking Forward to Your Feedback!</h5>
-<section>
-    <div class="container">
-            
-        <div class="row"> 
-                <div class="col-md-12">
-                    <span>I&#39;m always willing to engage...</span>
-                    <hr>        
-                          
-                </div>
-                <div class="col-md-12">
-                    
-                       <div class="form-group">
-                              <label for="exampleInputEmail1">Email address</label>
-                              <input type="email" class="form-control" id="emailInput" placeholder="Your preferred email">
-                                <span id="emailErrorMsg"></span>
-                              <input type="hidden" id="hidden" />
-                              <small id="emailHelp" class="form-text text-muted">I&#39;ll never share your email with anyone else.</small>
-                            </div>
-                            <div class="form-group">
-                                    <label for="exampleFormControlSelect2">Choose your desired topic</label>
-                                    <select class="form-control" id="msgTopic">
-                                      <option value="0">Select your topic</option>
-                                      <option value="1">Technical Consultancy</option>
-                                      <option value="2">Mentorship Queries</option>
-                                      <option value="3">Job Interests</option>
-                                      <option value="4">General Feedback</option>
-                                    </select>
-                                    <span id="topicErrorMsg"></span>
-                         </div>
-                              <div class="form-group">
-                                  <textarea id="feedbackMsg" name="career[message]" class="form-control" rows="6" tabindex="4"
-                                  placeholder="Write your details" required></textarea>      
-                                  <span id="feedbackErrorMsg"></span>
-                                </div>
-                           
-                                <button id="btnSubmit" type="submit" class="btn btn-primary">Submit</button>
-                                  <br>
-                                  <br>
-                                  <span id="emailConfirm"></span>
-                            
-                </div>
-        </div>
+
+<h4 class="quote">Looking Forward to Your Feedback!</h4>
+
+<section id="contactForm">
+         
+<span>I&#39;m always willing to engage...</span>
+
+<div id="email-input">
+      <label for="InputEmail1">Email address</label>
+      <input type="email" class="form-control" id="emailInput" placeholder="Your preferred email">
+      <span id="emailErrorMsg"></span>
+
+      <input type="hidden" id="hidden" />
+      <small id="emailHelp" class="form-text text-muted">I&#39;ll never share your email with anyone else.</small>
     </div>
+
+    <div id="topic-ddl">
+            <label for="FormControlSelect2">Choose your desired topic</label>
+            <select class="form-control" id="msgTopic">
+              <option value="0">Select your topic</option>
+              <option value="1">Technical Consultancy</option>
+              <option value="2">Mentorship Queries</option>
+              <option value="3">Job Interests</option>
+              <option value="4">General Feedback</option>
+            </select>
+
+            <span id="topicErrorMsg"></span>
+          </div>
+          <div id="msg-input">
+          <textarea id="feedbackMsg" name="career[message]" class="form-control" rows="6" tabindex="4"
+          placeholder="Write your details" required></textarea>      
+          <span id="feedbackErrorMsg"></span>
+            </div>
+    
+        <button id="btnSubmit" type="submit" class="btn btn-primary">Submit</button>
+       
+          <span id="emailConfirm"></span>
+
+  
 </section>
+

@@ -5,6 +5,7 @@
  require './assets/PHPMailer/class.pop3.php';
  require './assets/PHPMailer/class.smtp.php';
  require './assets/PHPMailer/class.phpmaileroauth.php';
+ require './assets/classes/User.php';
 
  
 // use PHPMailer;
@@ -73,7 +74,7 @@ $mail->SMTPDebug = 2;
 $mail->Debugoutput = 'html';
 
 //Set the hostname of the mail server
-$mail->Host = 'mail.privateemail.com';
+$mail->Host = User::getHost();
 // use
 // $mail->Host = gethostbyname('smtp.gmail.com');
 // if your network does not support SMTP over IPv6
@@ -92,7 +93,7 @@ $mail->Username = "";
 $mail->Password = "";
 
 //From email address and name
-$mail->From = "info@larrymayers.site";
+$mail->From = User::getEmail();
 $mail->FromName = "Larry Mayers Site - Contact Form Messages";
 
 //To address and name

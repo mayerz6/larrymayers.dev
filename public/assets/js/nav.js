@@ -123,9 +123,7 @@ class Nav{
             xhr.onreadystatechange = function(){
                 if(this.readyState == 4 && this.status == 200){
                  document.getElementById("screen-msg").innerHTML = this.responseText;
-        
-                new Form();
-
+                         new Form();
                 }
             }
         
